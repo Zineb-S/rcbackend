@@ -8,14 +8,14 @@ import bodyParser from 'body-parser'
 
 import Stripe from "stripe";
 
-const PORT = process.env.PORT || 3001;
+
 
 const stripe = Stripe('sk_test_51MtbLbHz09nFNN1Jba1ZYva3bOXy6yOOcJaDWRsec68ypHbiP8d7wFNEHZsGgggpDAn50clplK641vGHBWNo7R5800P7Rf6GiI');
 const db = mysql.createConnection({
     host: "d3y0lbg7abxmbuoi.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
-    user: "iosc9k0hsqvyxd3r",
-    password:"bvthr76j3rxkpuii",  
-    database: "mgczo3w876p9y43i"
+    user: "btldkwc9kfot8uvs",
+    password:"jjc07dga5hv7ncvy",  
+    database: "cfd58gbpgc9ivaoc"
   })
 
 const app = express();
@@ -335,6 +335,6 @@ app.post("/checkout", async (req, res) => {
         url: session.url
     }));
 });
-app.listen( PORT, () => {
+app.listen( process.env.PORT || 3001, () => {
     console.log(`Server listening on ${PORT}`);
 });
